@@ -1,5 +1,10 @@
 <?php
 
+if (!isset($_SESSION))
+{
+  session_start();
+}
+
     include('config.php');
 
     $request = $_REQUEST; //a PHP Super Global variable which used to collect data after submitting it from the form
@@ -32,7 +37,8 @@
       if (password_verify($pword,$returnedhash)){
 
         echo "Found Match";
-
+        $_SESSION["username"] = $uname;
+        
       }else{
         echo "no match";
       }
