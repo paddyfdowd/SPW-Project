@@ -7,12 +7,7 @@
 
     $hashedpword = password_hash($pword, PASSWORD_ARGON2I);
 
-    //$verifypword = password_verify($pword,$hashedpword);
 
-    //echo $hashedpword."   ".$verifypword
-
-
-    //echo $request["message"];
 
     $servername = "localhost"; //set the servername
     $username = "bob"; //set the server username
@@ -34,18 +29,6 @@
         $stmt->execute();
 
         echo "success";
-
-
-/*     // Set the INSERT SQL data
-    $sql = "INSERT INTO unamepword (username  ,password)
-    VALUES ('".$uname."', '".$pword."')";
-
-    // Process the query so that we will save the date of birth
-    if ($mysqli->query($sql)) {
-      echo "user added";
-    } else {
-      return "Error: " . $sql . "<br>" . $mysqli->error;
-    }*/
 
     } 
 

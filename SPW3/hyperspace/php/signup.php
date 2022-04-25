@@ -6,16 +6,7 @@
     $uname = $request["uname"];
     $pword = $request["pword"];
 
-    //echo $request["message"];
-/* 
-    $servername = "localhost"; //set the servername
-    $username = "bob"; //set the server username
-    $password = "password"; // set the server password (you must put password here if your using live server)
-    $dbname = "spw"; // set the table name
- */
 
-
- 
     $mysqli = new mysqli($servername, $username, $password, $dbname);
 
     if ($mysqli->connect_errno) {

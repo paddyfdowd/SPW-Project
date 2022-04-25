@@ -7,12 +7,7 @@
     $uname = $request["uname"];
     $pword = $request["pword"];
 
-    /* 
-    $servername = "localhost"; //set the servername
-    $username = "bob"; //set the server username
-    $password = "password"; // set the server password (you must put password here if your using live server)
-    $dbname = "spw"; // set the table name 
-    */
+ 
 
     $mysqli = new mysqli($servername, $username, $password, $dbname);
 
@@ -41,17 +36,6 @@
       }else{
         echo "no match";
       }
-    /* // Set the INSERT SQL data
-    $sql = "SELECT * FROM test";
-
-    // Process the query so that we will save the date of birth
-    $results = $mysqli->query($sql);
-
-    // Fetch Associative array
-    $row = $results->fetch_all(MYSQLI_ASSOC);
-
-    // Free result set
-    $results->free_result(); */
 
     }
 
