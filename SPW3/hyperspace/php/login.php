@@ -23,7 +23,7 @@ if (!isset($_SESSION))
         
 
 
-      $stmt = $mysqli->prepare("SELECT hashpassword from users WHERE username = ?");
+      $stmt = $mysqli->prepare("SELECT hashpassword, isadmin from users WHERE username = ?");
 
       $stmt->bind_param("s",$uname);
         
@@ -34,6 +34,11 @@ if (!isset($_SESSION))
       $row = $result->fetch_assoc(); // fetch data
       
       $returnedhash = $row["hashpassword"];
+      $isadmin = $row["isadmin"];
+
+      if ($isadmin == "1"){
+        $_SESSION["isadmin"] = $isadmin;
+        }
       if (password_verify($pword,$returnedhash)){
 
         echo "Found Match";

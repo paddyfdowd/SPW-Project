@@ -6,6 +6,7 @@ if (!isset($_SESSION))
 }
 
 $_SESSION["username"] =  "";
+$_SESSION["isadmin"] =  "";
 session_destroy();
 
 echo "sessionended"
