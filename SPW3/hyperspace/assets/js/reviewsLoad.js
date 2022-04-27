@@ -31,3 +31,5 @@ function tableTest(){
     }); 
      
 }
+
+window.addEventListener("load", tableTest());

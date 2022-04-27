@@ -7,7 +7,7 @@ if (!isset($_SESSION))
 
 
 
-    if($_SESSION["isadmin"] = "1"){
+    if($_SESSION["isadmin"] == "1"){
 
         echo "admin";
 

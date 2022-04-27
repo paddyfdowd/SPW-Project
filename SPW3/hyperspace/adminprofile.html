@@ -12,7 +12,7 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
-	<body class="is-preload">
+	<body onload="admintablebuilds()" class="is-preload">
 
 		<!-- Header -->
 			<header id="header">
@@ -20,8 +20,9 @@
 				<nav>
 					<ul>
 						<li><a href="index.html">Home</a></li>
-						<li><a href="generic.html" class="active">Generic</a></li>
+						<li><a href="generic.html">Generic</a></li>
 						<li><a href="elements.html">Elements</a></li>
+						<li><a href="adminMessages.html">Messages</a></li>
 					</ul>
 				</nav>
 			</header>
@@ -33,12 +34,24 @@
 					<section id="main" class="wrapper">
 						<div class="inner">
 							<h1 class="major">Admin Page</h1>
-							<p id="prof1">I'm Admin</p>
-							<p id="prof2">I'm Admin</p>
-							<p id="prof3">I'm Admin</p>
-							<p id="prof4">I'm Admin</p>
-							
-							<a href="setup.html" id="purchase package" class="button">Purchase Package</a>
+							<div class="table-wrapper">
+								<table id="adminbuildtable">
+									<thead>	
+										<tr>
+											<th>Name</th>
+											<th>Database</th>
+											<th>Contact </th>
+											<th>Primary Colour</th>
+											<th>Secondary Colour</th>
+											<th>Select</th>
+										</tr>
+									</thead>
+									<tbody>
+										
+									
+								</table>
+							</div>
+
 							<a id="profilelogout" class="button">Logout</a>
 						</div>
 					</section>
@@ -64,6 +77,7 @@
 			<script src="assets/js/main.js"></script>
 			<script src="assets/js/test.js"></script>
 			<script src="assets/js/profile.js"></script>
+			<script src="assets/js/adminprofile.js"></script>
 
 	</body>
 </html>

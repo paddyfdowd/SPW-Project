@@ -12,7 +12,7 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
-	<body onload="admincheck();tablebuilds()">
+	<body onload="messagestablebuild()" class="is-preload">
 
 		<!-- Header -->
 			<header id="header">
@@ -20,8 +20,9 @@
 				<nav>
 					<ul>
 						<li><a href="index.html">Home</a></li>
-						<li><a href="generic.html" class="active">Generic</a></li>
+						<li><a href="generic.html">Generic</a></li>
 						<li><a href="elements.html">Elements</a></li>
+						<li><a href="adminprofile.html">Admin Page</a></li>
 					</ul>
 				</nav>
 			</header>
@@ -32,24 +33,24 @@
 				<!-- Main -->
 					<section id="main" class="wrapper">
 						<div class="inner">
-							<h1 class="major">Profile</h1>
-							<h2>My Purchased Builds</h2>
+							<h1 class="major">Messages</h1>
 							<div class="table-wrapper">
-								<table id="buildtable">
+								<table id="adminmessagestable">
 									<thead>	
 										<tr>
 											<th>Name</th>
-											<th>Database</th>
-											<th>Contact </th>
-											<th>Primary Colour</th>
-											<th>Secondary Colour</th>
-											
+											<th>Email</th>
+											<th>Message </th>
+											<th>Time </th>
+											<th>Delete</th>
 										</tr>
 									</thead>
 									<tbody>
+										
+									
 								</table>
 							</div>
-							<a href="setup.html" class="button">Purchase Build</a>
+
 							<a id="profilelogout" class="button">Logout</a>
 						</div>
 					</section>
@@ -75,6 +76,8 @@
 			<script src="assets/js/main.js"></script>
 			<script src="assets/js/test.js"></script>
 			<script src="assets/js/profile.js"></script>
+			<script src="assets/js/adminprofile.js"></script>
+			<script src="assets/js/adminMessages.js"></script>
 
 	</body>
 </html>
