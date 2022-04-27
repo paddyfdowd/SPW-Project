@@ -8,7 +8,7 @@
     $name = $request["name"];
     $address = $request["address"];
 
-    $hashedpword = password_hash($pword, PASSWORD_ARGON2I);
+    $hashedpword = password_hash($pword, PASSWORD_DEFAULT);
 
     $mysqli = new mysqli($servername, $username, $password, $dbname);
 
