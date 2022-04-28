@@ -15,7 +15,7 @@ function buildersubmit(){
 
     $.ajax({
         type: "POST",
-        url: "/dashboard/SPW/SPW/SPW3/hyperspace/php/setup.php",
+        url: "/SPW-Project/php/setup.php",
         data: {"databasetype" : databasetype, "contactform" : contactform, "pcolour" : pcolour, "scolour" : scolour}
     })
     .done (function(data, textStatus, jqXHR) { 

@@ -1,9 +1,8 @@
-
- function admintablebuilds(){
+function tablebuilds(){
 
   $.ajax({
       type: "GET",
-      url: "/dashboard/SPW/SPW/SPW3/hyperspace/php/adminbuildLoad.php",
+      url: "/SPW-Project/php/buildLoad.php",
       
   })
   .done (function(data, textStatus, jqXHR) { 
@@ -13,7 +12,7 @@
     var length =  datajson.length;
 
     for(let i = 0; i < datajson.length; i++){
-      var table = document.getElementById("adminbuildtable");
+      var table = document.getElementById("buildtable");
       var rowCount = table.rows.length;
       var row = table.insertRow(rowCount);
 
@@ -22,19 +21,10 @@
       row.insertCell(2).innerHTML= datajson[i].contactform;
       row.insertCell(3).innerHTML= datajson[i].pcolour;
       row.insertCell(4).innerHTML= datajson[i].scolour;
-
-      var buttonCell = row.insertCell(5);  
-      var btn  =document.createElement("BUTTON");
-      btn.id = datajson[i].id;
-      btn.innerHTML = "Delete";
-      btn.addEventListener("click", buttonPress);
-      buttonCell.appendChild(btn);
     }
-    
 
 
   })
-
   .fail (function(jqXHR, textStatus, errorThrown) { 
     alert("Error" + errorThrown + textStatus); 
   })
@@ -45,18 +35,39 @@
 }
 
 
+function admincheck(){
+    
+  $.ajax({
+      type: "GET",
+      url: "/SPW-Project/php/admin.php",
+      
+  })
+  .done (function(data, textStatus, jqXHR) { 
+    if(data === "admin"){
+      window.location.href = "http://localhost/SPW-Project/adminprofile.html"
+    }
 
+  })
+  .fail (function(jqXHR, textStatus, errorThrown) { 
+    alert("Error" + errorThrown + textStatus); 
+  })
+  .always (function(jqXHROrData, textStatus, jqXHROrErrorThrown) { 
+    //alert("complete"); 
+  });
+
+
+}
 function logoutTest(){
 
   $.ajax({
       type: "GET",
-      url: "/dashboard/SPW/SPW/SPW3/hyperspace/php/logout.php",
+      url: "/SPW-Project/php/logout.php",
       
   })
   .done (function(data, textStatus, jqXHR) { 
     alert("Success: " + data); 
     if(data === "sessionended"){
-      window.location.href = "http://localhost/dashboard/SPW/SPW/SPW3/hyperspace/login.html"
+      window.location.href = "http://localhost/SPW-Project/login.html"
     }
 
   })
@@ -69,32 +80,9 @@ function logoutTest(){
   
 }
 
-function buttonPress(){
 
-
-  var buildId = event.srcElement.id;
-  alert(buildId);
-
-    $.ajax({
-    type: "POST",
-    url: "/dashboard/SPW/SPW/SPW3/hyperspace/php/deletebuild.php",
-    data: {"buildId" : buildId}
-    
-})
-.done (function(data, textStatus, jqXHR) { 
-  alert("Success: " + data); 
-
-
-})
-.fail (function(jqXHR, textStatus, errorThrown) { 
-  alert("Error" + errorThrown + textStatus); 
-})
-.always (function(jqXHROrData, textStatus, jqXHROrErrorThrown) { 
-  //alert("complete"); 
-});
-
- 
-} 
-
+//window.addEventListener("load", admincheck());
+//window.addEventListener("load", tablebuilds());
 
 document.getElementById("profilelogout").addEventListener("click", logoutTest); 
+//document.getElementById("profilebutton").addEventListener("click", update); 

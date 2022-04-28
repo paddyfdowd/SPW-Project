@@ -3,7 +3,7 @@
 
   $.ajax({
       type: "GET",
-      url: "/dashboard/SPW/SPW/SPW3/hyperspace/php/adminMessagesLoad.php",
+      url: "/SPW-Project/php/adminMessagesLoad.php",
       
   })
   .done (function(data, textStatus, jqXHR) { 
@@ -52,7 +52,7 @@ function buttonPress(){
 
     $.ajax({
     type: "POST",
-    url: "/dashboard/SPW/SPW/SPW3/hyperspace/php/deleteMessage.php",
+    url: "/SPW-Project/php/deleteMessage.php",
     data: {"buildId" : buildId}
     
 })

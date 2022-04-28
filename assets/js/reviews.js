@@ -5,7 +5,7 @@ function submitReview(){
   
      $.ajax({
         type: "POST",
-        url: "/dashboard/SPW/SPW/SPW3/hyperspace/php/reviews.php",
+        url: "/SPW-Project/php/reviews.php",
         data: {"reviewbody" : message, "score" : score}
     })
     .done (function(data, textStatus, jqXHR) { 
