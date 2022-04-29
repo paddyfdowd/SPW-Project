@@ -1,6 +1,6 @@
 <?php
 
-    include('config.php');
+   /*  include('config.php');
 
     $request = $_REQUEST; //a PHP Super Global variable which used to collect data after submitting it from the form
     $uname = $request["uname"];
@@ -23,7 +23,7 @@
 
       echo "success";
 
-
+ */
 
 
 
@@ -36,12 +36,12 @@
       echo "user added";
     } else {
       return "Error: " . $sql . "<br>" . $mysqli->error;
-    } */
+    } 
 
     }
 
     
     $mysqli->close();
-    
+    */
 
 ?>

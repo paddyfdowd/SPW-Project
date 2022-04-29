@@ -37,8 +37,8 @@ function buildersubmit(){
 
     var token = document.getElementById("token").value;
     
-
-    alert(token);
+    if(databasetype && contactform && pcolour && scolour != ""){
+    
 
     $.ajax({
         type: "POST",
@@ -54,7 +54,9 @@ function buildersubmit(){
     .always (function(jqXHROrData, textStatus, jqXHROrErrorThrown) { 
       //alert("complete"); 
     });
-    
+  }else{
+    alert("Fill out all forms");
+  }
 }
     
     

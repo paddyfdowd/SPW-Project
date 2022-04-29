@@ -8,7 +8,7 @@ function phpSignup(){
 
     var pword = document.getElementById("signup_4").value;
 
-    if(uname && pword && address && pword !== ""){
+    if(uname && name && address && pword !== ""){
 
     $.ajax({
         type: "POST",
@@ -17,6 +17,13 @@ function phpSignup(){
     })
     .done (function(data, textStatus, jqXHR) { 
       alert("Success: " + data); 
+      if(data == "userexists"){
+        alert("Username unavailable")
+      }
+      else{
+        window.location.href = "http://localhost/dashboard/SPW/SPW/SPW3/hyperspace/profile.html"
+      }
+
     })
     .fail (function(jqXHR, textStatus, errorThrown) { 
       alert("Error" + errorThrown + textStatus); 
