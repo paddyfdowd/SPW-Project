@@ -31,7 +31,7 @@
     } else{
         
 
-        $stmt = $mysqli->prepare("INSERT INTO review(reviewbody, score, reviewname) VALUES (?, ?, ?)");
+        $stmt = $mysqli->prepare("INSERT INTO reviews(reviewbody, score, reviewname) VALUES (?, ?, ?)");
 
         $stmt->bind_param("sss", $reviewbody, $score, $uname);
         

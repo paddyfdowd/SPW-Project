@@ -1,8 +1,11 @@
 function submitMessage() {
 
+
   var name = document.getElementById("name").value;
   var email = document.getElementById("email").value;
   var message = document.getElementById("message").value;
+
+  if(name && email && message != ""){
 
   $.ajax({
       type: "POST",
@@ -15,9 +18,15 @@ function submitMessage() {
     })
 
     .done (function(data, textStatus, jqXHR) { 
-      if(data)
-      alert("Success: " + data); 
+      
+      if(data == "invalid"){
+      alert("Invalid email"); 
+      }
+      else{
+        alert("Thank you for yor message");
+        window.location.href = "http://localhost/dashboard/SPW/SPW/SPW3/hyperspace/index.html";
 
+      }
     })
     .fail(function (jqXHR, textStatus, errorThrown) {
       alert("Error" + errorThrown + textStatus);
@@ -25,6 +34,9 @@ function submitMessage() {
     .always(function (jqXHROrData, textStatus, jqXHROrErrorThrown) {
       //alert("complete"); 
     });
+  }else{
+    alert("Enter all fields please")
+  }
 }
 
 document.getElementById("messagesubmit").addEventListener("click", submitMessage);
