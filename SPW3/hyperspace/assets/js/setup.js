@@ -44,20 +44,22 @@ function buildersubmit(){
         type: "POST",
         url: "/dashboard/SPW/SPW/SPW3/hyperspace/php/setup.php",
         data: {"databasetype" : databasetype, "contactform" : contactform, "pcolour" : pcolour, "scolour" : scolour, "token": token}
+
     })
-    .done (function(data, textStatus, jqXHR) { 
-      alert("Success: " + data); 
+    .done(function (data, textStatus, jqXHR) {
+      alert("Success: " + data);
     })
-    .fail (function(jqXHR, textStatus, errorThrown) { 
-      alert("Error" + errorThrown + textStatus); 
+    .fail(function (jqXHR, textStatus, errorThrown) {
+      alert("Error" + errorThrown + textStatus);
     })
-    .always (function(jqXHROrData, textStatus, jqXHROrErrorThrown) { 
+    .always(function (jqXHROrData, textStatus, jqXHROrErrorThrown) {
       //alert("complete"); 
     });
+
   }else{
     alert("Fill out all forms");
   }
+
 }
-    
-    
-document.getElementById("setupbutton").addEventListener("click", buildersubmit); 
+
+document.getElementById("setupbutton").addEventListener("click", buildersubmit);

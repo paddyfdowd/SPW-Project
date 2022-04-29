@@ -1,25 +1,22 @@
-function logincheck(){
-    
-    $.ajax({
-        type: "GET",
-        url: "/dashboard/SPW/SPW/SPW3/hyperspace/php/auth.php",
-        
+function logincheck() {
+
+  $.ajax({
+      type: "GET",
+      url: "/dashboard/SPW/SPW/SPW3/hyperspace/php/auth.php",
     })
-    .done (function(data, textStatus, jqXHR) { 
-      if(data === "loggedin"){
+    .done(function (data, textStatus, jqXHR) {
+      if (data === "loggedin") {
         window.location.href = "http://localhost/dashboard/SPW/SPW/SPW3/hyperspace/profile.html"
       }
-  
     })
-    .fail (function(jqXHR, textStatus, errorThrown) { 
-      alert("Error" + errorThrown + textStatus); 
+    .fail(function (jqXHR, textStatus, errorThrown) {
+      alert("Error" + errorThrown + textStatus);
     })
-    .always (function(jqXHROrData, textStatus, jqXHROrErrorThrown) { 
+    .always(function (jqXHROrData, textStatus, jqXHROrErrorThrown) {
       //alert("complete"); 
     });
-
-
 }
+
 
 function login(){
 
@@ -34,17 +31,18 @@ function login(){
         type: "POST",
         url: "/dashboard/SPW/SPW/SPW3/hyperspace/php/login.php",
         data: {"uname" : uname, "pword" : pword}
+
     })
-    .done (function(data, textStatus, jqXHR) { 
-      alert("Success: " + data); 
-      if (data === "Found Match"){
-          window.location.href = "http://localhost/dashboard/SPW/SPW/SPW3/hyperspace/profile.html"
+    .done(function (data, textStatus, jqXHR) {
+      alert("Success: " + data);
+      if (data === "Found Match") {
+        window.location.href = "http://localhost/dashboard/SPW/SPW/SPW3/hyperspace/profile.html"
       }
     })
-    .fail (function(jqXHR, textStatus, errorThrown) { 
-      alert("Error" + errorThrown + textStatus); 
+    .fail(function (jqXHR, textStatus, errorThrown) {
+      alert("Error" + errorThrown + textStatus);
     })
-    .always (function(jqXHROrData, textStatus, jqXHROrErrorThrown) { 
+    .always(function (jqXHROrData, textStatus, jqXHROrErrorThrown) {
       //alert("complete"); 
     });
   }
@@ -55,4 +53,4 @@ function login(){
     
 }
 
-document.getElementById("loginbutton").addEventListener("click", login); 
+document.getElementById("loginbutton").addEventListener("click", login);

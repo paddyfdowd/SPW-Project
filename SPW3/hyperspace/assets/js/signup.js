@@ -1,12 +1,12 @@
+function phpSignup() {
 
-function phpSignup(){
-    var uname = document.getElementById("signup_1").value;
+  var uname = document.getElementById("signup_1").value;
 
-    var name = document.getElementById("signup_2").value;
+  var name = document.getElementById("signup_2").value;
 
-    var address = document.getElementById("signup_3").value;
+  var address = document.getElementById("signup_3").value;
 
-    var pword = document.getElementById("signup_4").value;
+  var pword = document.getElementById("signup_4").value;
 
     if(uname && name && address && pword !== ""){
 
@@ -25,10 +25,10 @@ function phpSignup(){
       }
 
     })
-    .fail (function(jqXHR, textStatus, errorThrown) { 
-      alert("Error" + errorThrown + textStatus); 
+    .fail(function (jqXHR, textStatus, errorThrown) {
+      alert("Error" + errorThrown + textStatus);
     })
-    .always (function(jqXHROrData, textStatus, jqXHROrErrorThrown) { 
+    .always(function (jqXHROrData, textStatus, jqXHROrErrorThrown) {
       //alert("complete"); 
     });
     
@@ -40,3 +40,4 @@ function phpSignup(){
     
   }   
 document.getElementById("signupbutton").addEventListener("click", phpSignup); 
+
