@@ -1,0 +1,2 @@
+RewriteEngine On
+ErrorDocument 404 http://localhost/dashboard/SPW/SPW/SPW3/hyperspace/404.html
