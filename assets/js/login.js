@@ -24,7 +24,7 @@ function login() {
 
   $.ajax({
       type: "POST",
-      url: "/dashboard/SPW/SPW/SPW3/hyperspace/php/login.php",
+      url: "/SPW-Project/php/login.php",
       data: {
         "uname": uname,
         "pword": pword

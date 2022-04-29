@@ -125,6 +125,7 @@ q:after {
 	content: none;
 }
 
+
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
@@ -924,6 +925,10 @@ hr.major {
 		padding-top: 3em;
 	}
 
+}
+
+#login_btn {
+	transition: opacity 0.5s 0s linear;
 }
 
 @media screen and (max-width: 1280px) {
