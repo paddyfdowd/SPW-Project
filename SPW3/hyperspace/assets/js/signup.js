@@ -10,7 +10,7 @@ function phpSignup() {
 
   $.ajax({
       type: "POST",
-      url: "/SPW-Project/php/hash.php",
+      url: "/dashboard/SPW/SPW/SPW3/hyperspace/php/hash.php",
       data: {
         "uname": uname,
         "pword": pword,

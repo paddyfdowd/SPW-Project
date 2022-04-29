@@ -2,7 +2,7 @@ function tablebuilds() {
 
   $.ajax({
       type: "GET",
-      url: "/SPW-Project/php/buildLoad.php",
+      url: "/dashboard/SPW/SPW/SPW3/hyperspace/php/buildLoad.php",
     })
     .done(function (data, textStatus, jqXHR) {
       //alert("Success: " + data); 
@@ -34,11 +34,11 @@ function admincheck() {
 
   $.ajax({
       type: "GET",
-      url: "/SPW-Project/php/admin.php",
+      url: "/dashboard/SPW/SPW/SPW3/hyperspace/php/admin.php",
     })
     .done(function (data, textStatus, jqXHR) {
       if (data === "admin") {
-        window.location.href = "http://localhost/SPW-Project/adminprofile.html"
+        window.location.href = "http://localhost/dashboard/SPW/SPW/SPW3/hyperspace/adminprofile.html"
       }
     })
     .fail(function (jqXHR, textStatus, errorThrown) {
@@ -53,12 +53,12 @@ function logoutTest() {
 
   $.ajax({
       type: "GET",
-      url: "/SPW-Project/php/logout.php",
+      url: "/dashboard/SPW/SPW/SPW3/hyperspace/php/logout.php",
     })
     .done(function (data, textStatus, jqXHR) {
       alert("Success: " + data);
       if (data === "sessionended") {
-        window.location.href = "http://localhost/SPW-Project/login.html"
+        window.location.href = "http://localhost/dashboard/SPW/SPW/SPW3/hyperspace/login.html"
       }
     })
     .fail(function (jqXHR, textStatus, errorThrown) {
