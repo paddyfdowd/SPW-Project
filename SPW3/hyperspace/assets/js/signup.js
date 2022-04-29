@@ -8,18 +8,22 @@ function phpSignup() {
 
   var pword = document.getElementById("signup_4").value;
 
-  $.ajax({
-      type: "POST",
-      url: "/dashboard/SPW/SPW/SPW3/hyperspace/php/hash.php",
-      data: {
-        "uname": uname,
-        "pword": pword,
-        "name": name,
-        "address": address
-      }
+    if(uname && name && address && pword !== ""){
+
+    $.ajax({
+        type: "POST",
+        url: "/dashboard/SPW/SPW/SPW3/hyperspace/php/hash.php",
+        data: {"uname" : uname, "pword" : pword, "name" : name, "address" : address}
     })
-    .done(function (data, textStatus, jqXHR) {
-      alert("Success: " + data);
+    .done (function(data, textStatus, jqXHR) { 
+      alert("Success: " + data); 
+      if(data == "userexists"){
+        alert("Username unavailable")
+      }
+      else{
+        window.location.href = "http://localhost/dashboard/SPW/SPW/SPW3/hyperspace/profile.html"
+      }
+
     })
     .fail(function (jqXHR, textStatus, errorThrown) {
       alert("Error" + errorThrown + textStatus);
@@ -27,6 +31,13 @@ function phpSignup() {
     .always(function (jqXHROrData, textStatus, jqXHROrErrorThrown) {
       //alert("complete"); 
     });
-}
+    
+    }
+    else{
 
-document.getElementById("signupbutton").addEventListener("click", phpSignup);
+      alert("Please fill in all fields");
+    }
+    
+  }   
+document.getElementById("signupbutton").addEventListener("click", phpSignup); 
+

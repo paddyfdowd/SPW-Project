@@ -8,6 +8,12 @@
     $name = $request["name"];
     $email = $request["email"];
 
+    if(filter_var($email, FILTER_VALIDATE_EMAIL)){
+      echo "valid";
+    
+    $message = htmlspecialchars($message);
+    $name = htmlspecialchars($name);
+    $email = htmlspecialchars($email);
  
     $mysqli = new mysqli($servername, $username, $password, $dbname);
 
@@ -29,5 +35,9 @@
     
     $mysqli->close();
 
+  }
 
+  else{
+    echo "invalid";
+  }
 ?>

@@ -13,8 +13,11 @@ function submitMessage() {
         "email": email
       }
     })
-    .done(function (data, textStatus, jqXHR) {
-      alert("Success: " + data);
+
+    .done (function(data, textStatus, jqXHR) { 
+      if(data)
+      alert("Success: " + data); 
+
     })
     .fail(function (jqXHR, textStatus, errorThrown) {
       alert("Error" + errorThrown + textStatus);

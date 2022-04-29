@@ -30,8 +30,9 @@ function tablebuilds() {
     });
 }
 
-function admincheck() {
 
+function admincheck(){
+    
   $.ajax({
       type: "GET",
       url: "/dashboard/SPW/SPW/SPW3/hyperspace/php/admin.php",

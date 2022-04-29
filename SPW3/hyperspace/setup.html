@@ -11,7 +11,7 @@
 		<link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 </head>
 
-<body class="is-preload">
+<body onload="signincheck(), getToken()" class="is-preload">
 
 	<!-- Header -->
 	<header id="header">
@@ -28,6 +28,7 @@
 
 	<!-- Wrapper -->
 	<div id="wrapper">
+
 
 		<!-- Main -->
 		<section id="main" class="wrapper fade-up">
@@ -57,6 +58,7 @@
 									</select>
 								</div>
 						</form>
+
 					</section>
 					<section>
 
@@ -111,7 +113,9 @@
 	<script src="assets/js/main.js"></script>
 	<script src="assets/js/test.js"></script>
 	<script src="assets/js/setup.js"></script>
+  <script src="assets/js/signinCheck.js"></script>
 
 </body>
+
 
 </html>

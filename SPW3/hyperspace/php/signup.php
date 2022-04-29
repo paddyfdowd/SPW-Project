@@ -1,6 +1,6 @@
 <?php
 
-    include('config.php');
+   /*  include('config.php');
 
     $request = $_REQUEST; //a PHP Super Global variable which used to collect data after submitting it from the form
     $uname = $request["uname"];
@@ -15,7 +15,19 @@
     } else{
         
         
-    // Set the INSERT SQL data
+      $stmt = $mysqli->prepare("INSERT INTO messages(name, email, message) VALUES (?, ?, ?)");
+
+      $stmt->bind_param("sss", $name, $email, $message);
+      
+      $stmt->execute();
+
+      echo "success";
+
+ */
+
+
+
+   /*  // Set the INSERT SQL data
     $sql = "INSERT INTO unamepword (username  ,password)
     VALUES ('".$uname."', '".$pword."')";
 
@@ -24,12 +36,12 @@
       echo "user added";
     } else {
       return "Error: " . $sql . "<br>" . $mysqli->error;
-    }
+    } 
 
     }
 
     
     $mysqli->close();
-    
+    */
 
 ?>
