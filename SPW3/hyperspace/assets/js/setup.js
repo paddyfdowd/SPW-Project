@@ -1,4 +1,28 @@
 
+function getToken(){
+
+  $.ajax({
+    type: "GET",
+    url: "/dashboard/SPW/SPW/SPW3/hyperspace/php/getToken.php",
+    
+})
+.done (function(data, textStatus, jqXHR) { 
+  //alert("Success: " + data); 
+  var tokenElement = document.getElementById("token")
+  tokenElement.value = data;
+
+})
+.fail (function(jqXHR, textStatus, errorThrown) { 
+  alert("Error" + errorThrown + textStatus); 
+})
+.always (function(jqXHROrData, textStatus, jqXHROrErrorThrown) { 
+  //alert("complete"); 
+}); 
+
+}
+
+
+
 function buildersubmit(){
 
    
@@ -10,13 +34,16 @@ function buildersubmit(){
     var pcolour = document.getElementById("builder-pcolour").value;
    
     var scolour = document.getElementById("builder-scolour").value;
+
+    var token = document.getElementById("token").value;
     
-    alert(databasetype);
+
+    alert(token);
 
     $.ajax({
         type: "POST",
         url: "/dashboard/SPW/SPW/SPW3/hyperspace/php/setup.php",
-        data: {"databasetype" : databasetype, "contactform" : contactform, "pcolour" : pcolour, "scolour" : scolour}
+        data: {"databasetype" : databasetype, "contactform" : contactform, "pcolour" : pcolour, "scolour" : scolour, "token": token}
     })
     .done (function(data, textStatus, jqXHR) { 
       alert("Success: " + data); 

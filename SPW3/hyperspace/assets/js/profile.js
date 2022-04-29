@@ -34,7 +34,6 @@ function tablebuilds(){
    
 }
 
-
 function admincheck(){
     
   $.ajax({

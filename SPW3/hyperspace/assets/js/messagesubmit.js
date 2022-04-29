@@ -12,6 +12,7 @@ function submitMessage(){
         data: {"message" : message , "name" : name, "email" : email}
     })
     .done (function(data, textStatus, jqXHR) { 
+      if(data)
       alert("Success: " + data); 
     })
     .fail (function(jqXHR, textStatus, errorThrown) { 

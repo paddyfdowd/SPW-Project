@@ -9,6 +9,10 @@ function submitReview(){
         data: {"reviewbody" : message, "score" : score}
     })
     .done (function(data, textStatus, jqXHR) { 
+      if (data == "notsignedin"){
+        alert("Sign in to post review");
+        window.location.href = "http://localhost/dashboard/SPW/SPW/SPW3/hyperspace/login.html"
+      }
       alert("Success: " + data); 
     })
     .fail (function(jqXHR, textStatus, errorThrown) { 

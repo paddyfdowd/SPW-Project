@@ -8,6 +8,8 @@ function phpSignup(){
 
     var pword = document.getElementById("signup_4").value;
 
+    if(uname && pword && address && pword !== ""){
+
     $.ajax({
         type: "POST",
         url: "/dashboard/SPW/SPW/SPW3/hyperspace/php/hash.php",
@@ -24,6 +26,10 @@ function phpSignup(){
     });
     
     }
+    else{
+
+      alert("Please fill in all fields");
+    }
     
-    
+  }   
 document.getElementById("signupbutton").addEventListener("click", phpSignup); 

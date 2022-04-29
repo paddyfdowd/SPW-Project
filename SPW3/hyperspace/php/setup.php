@@ -13,8 +13,16 @@
     $contactform = $request["contactform"];
     $pcolour = $request["pcolour"];
     $scolour = $request["scolour"];
+    $recievedToken = $request["token"];
+
     $uname = $_SESSION["username"];
- 
+    $sessionToken = $_SESSION["token"];
+    
+    if($recievedToken !== $sessionToken){
+        echo "no match";
+
+    }
+    else{
     $mysqli = new mysqli($servername, $username, $password, $dbname);
 
     if ($mysqli->connect_errno) {
@@ -36,5 +44,5 @@
     
     $mysqli->close();
 
-
+    }
 ?>

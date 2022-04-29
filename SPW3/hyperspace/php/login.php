@@ -26,13 +26,19 @@ if (!isset($_SESSION))
       $stmt = $mysqli->prepare("SELECT hashpassword, isadmin from users WHERE username = ?");
 
       $stmt->bind_param("s",$uname);
-        
+      
       $stmt->execute();
         
+      
       $result = $stmt->get_result();
       
+      if($result->num_rows == 0){
+        echo "no match";
+      }
+      else{
       $row = $result->fetch_assoc(); // fetch data
       
+
       $returnedhash = $row["hashpassword"];
       $isadmin = $row["isadmin"];
 
@@ -45,11 +51,11 @@ if (!isset($_SESSION))
         $_SESSION["username"] = $uname;
         
       }else{
-        echo "no match";
+        echo "no match";  
       }
 
     }
-
+  }
     
     $mysqli->close();
     //echo json_encode($row);

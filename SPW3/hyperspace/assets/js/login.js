@@ -22,9 +22,13 @@ function logincheck(){
 }
 
 function login(){
+
+
     var uname = document.getElementById("login_1").value;
 
     var pword = document.getElementById("login_2").value;
+
+    if(uname && pword !== ""){
 
     $.ajax({
         type: "POST",
@@ -43,6 +47,11 @@ function login(){
     .always (function(jqXHROrData, textStatus, jqXHROrErrorThrown) { 
       //alert("complete"); 
     });
+  }
+  else{
+
+    alert("Please Enter username and password");
+  }
     
 }
 
