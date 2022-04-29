@@ -3,7 +3,7 @@ function getToken(){
 
   $.ajax({
     type: "GET",
-    url: "/dashboard/SPW/SPW/SPW3/hyperspace/php/getToken.php",
+    url: "/SPW-Project/php/getToken.php",
     
 })
 .done (function(data, textStatus, jqXHR) { 
@@ -42,7 +42,7 @@ function buildersubmit(){
 
     $.ajax({
         type: "POST",
-        url: "/dashboard/SPW/SPW/SPW3/hyperspace/php/setup.php",
+        url: "/SPW-Project/php/setup.php",
         data: {"databasetype" : databasetype, "contactform" : contactform, "pcolour" : pcolour, "scolour" : scolour, "token": token}
 
     })

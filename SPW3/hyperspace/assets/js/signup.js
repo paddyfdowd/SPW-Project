@@ -12,7 +12,7 @@ function phpSignup() {
 
     $.ajax({
         type: "POST",
-        url: "/dashboard/SPW/SPW/SPW3/hyperspace/php/hash.php",
+        url: "/SPW-Project/php/hash.php",
         data: {"uname" : uname, "pword" : pword, "name" : name, "address" : address}
     })
     .done (function(data, textStatus, jqXHR) { 
@@ -21,7 +21,7 @@ function phpSignup() {
         alert("Username unavailable")
       }
       else{
-        window.location.href = "http://localhost/dashboard/SPW/SPW/SPW3/hyperspace/profile.html"
+        window.location.href = "http://localhost/SPW-Project/profile.html"
       }
 
     })

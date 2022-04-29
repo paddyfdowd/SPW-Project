@@ -2,11 +2,11 @@ function logincheck() {
 
   $.ajax({
       type: "GET",
-      url: "/dashboard/SPW/SPW/SPW3/hyperspace/php/auth.php",
+      url: "/SPW-Project/php/auth.php",
     })
     .done(function (data, textStatus, jqXHR) {
       if (data === "loggedin") {
-        window.location.href = "http://localhost/dashboard/SPW/SPW/SPW3/hyperspace/profile.html"
+        window.location.href = "http://localhost/SPW-Project/profile.html"
       }
     })
     .fail(function (jqXHR, textStatus, errorThrown) {
@@ -29,14 +29,14 @@ function login(){
 
     $.ajax({
         type: "POST",
-        url: "/dashboard/SPW/SPW/SPW3/hyperspace/php/login.php",
+        url: "/SPW-Project/php/login.php",
         data: {"uname" : uname, "pword" : pword}
 
     })
     .done(function (data, textStatus, jqXHR) {
       alert("Success: " + data);
       if (data === "Found Match") {
-        window.location.href = "http://localhost/dashboard/SPW/SPW/SPW3/hyperspace/profile.html"
+        window.location.href = "http://localhost/SPW-Project/profile.html"
       }
     })
     .fail(function (jqXHR, textStatus, errorThrown) {
