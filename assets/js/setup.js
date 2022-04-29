@@ -1,34 +1,34 @@
+function buildersubmit() {
 
-function buildersubmit(){
+  var databasetype = document.getElementById("builder-db").value;
 
-   
-  
-    var databasetype = document.getElementById("builder-db").value;
-    
-    var contactform = document.getElementById("builder-contact").value;
-    
-    var pcolour = document.getElementById("builder-pcolour").value;
-   
-    var scolour = document.getElementById("builder-scolour").value;
-    
-    alert(databasetype);
+  var contactform = document.getElementById("builder-contact").value;
 
-    $.ajax({
-        type: "POST",
-        url: "/SPW-Project/php/setup.php",
-        data: {"databasetype" : databasetype, "contactform" : contactform, "pcolour" : pcolour, "scolour" : scolour}
+  var pcolour = document.getElementById("builder-pcolour").value;
+
+  var scolour = document.getElementById("builder-scolour").value;
+
+  alert(databasetype);
+
+  $.ajax({
+      type: "POST",
+      url: "/SPW-Project/php/setup.php",
+      data: {
+        "databasetype": databasetype,
+        "contactform": contactform,
+        "pcolour": pcolour,
+        "scolour": scolour
+      }
     })
-    .done (function(data, textStatus, jqXHR) { 
-      alert("Success: " + data); 
+    .done(function (data, textStatus, jqXHR) {
+      alert("Success: " + data);
     })
-    .fail (function(jqXHR, textStatus, errorThrown) { 
-      alert("Error" + errorThrown + textStatus); 
+    .fail(function (jqXHR, textStatus, errorThrown) {
+      alert("Error" + errorThrown + textStatus);
     })
-    .always (function(jqXHROrData, textStatus, jqXHROrErrorThrown) { 
+    .always(function (jqXHROrData, textStatus, jqXHROrErrorThrown) {
       //alert("complete"); 
     });
-    
 }
-    
-    
-document.getElementById("setupbutton").addEventListener("click", buildersubmit); 
+
+document.getElementById("setupbutton").addEventListener("click", buildersubmit);

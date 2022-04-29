@@ -1,24 +1,25 @@
-function submitReview(){
-  
+function submitReview() {
+
   var message = document.getElementById("reviewmessage").value;
   var score = document.getElementById("reviewscore").value;
-  
-     $.ajax({
-        type: "POST",
-        url: "/SPW-Project/php/reviews.php",
-        data: {"reviewbody" : message, "score" : score}
+
+  $.ajax({
+      type: "POST",
+      url: "/SPW-Project/php/reviews.php",
+      data: {
+        "reviewbody": message,
+        "score": score
+      }
     })
-    .done (function(data, textStatus, jqXHR) { 
-      alert("Success: " + data); 
+    .done(function (data, textStatus, jqXHR) {
+      alert("Success: " + data);
     })
-    .fail (function(jqXHR, textStatus, errorThrown) { 
-      alert("Error" + errorThrown + textStatus); 
+    .fail(function (jqXHR, textStatus, errorThrown) {
+      alert("Error" + errorThrown + textStatus);
     })
-    .always (function(jqXHROrData, textStatus, jqXHROrErrorThrown) { 
+    .always(function (jqXHROrData, textStatus, jqXHROrErrorThrown) {
       //alert("complete"); 
-    }); 
-    
+    });
 }
 
-
-document.getElementById("reviewsubmit").addEventListener("click", submitReview); 
+document.getElementById("reviewsubmit").addEventListener("click", submitReview);

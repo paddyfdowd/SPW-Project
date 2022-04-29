@@ -1,49 +1,47 @@
-function logincheck(){
-    
-    $.ajax({
-        type: "GET",
-        url: "/SPW-Project/php/auth.php",
-        
+function logincheck() {
+
+  $.ajax({
+      type: "GET",
+      url: "/SPW-Project/php/auth.php",
     })
-    .done (function(data, textStatus, jqXHR) { 
-      if(data === "loggedin"){
+    .done(function (data, textStatus, jqXHR) {
+      if (data === "loggedin") {
         window.location.href = "http://localhost/SPW-Project/profile.html"
       }
-  
     })
-    .fail (function(jqXHR, textStatus, errorThrown) { 
-      alert("Error" + errorThrown + textStatus); 
+    .fail(function (jqXHR, textStatus, errorThrown) {
+      alert("Error" + errorThrown + textStatus);
     })
-    .always (function(jqXHROrData, textStatus, jqXHROrErrorThrown) { 
+    .always(function (jqXHROrData, textStatus, jqXHROrErrorThrown) {
       //alert("complete"); 
     });
-
-
 }
 
-function login(){
-    var uname = document.getElementById("login_1").value;
+function login() {
+  
+  var uname = document.getElementById("login_1").value;
+  var pword = document.getElementById("login_2").value;
 
-    var pword = document.getElementById("login_2").value;
-
-    $.ajax({
-        type: "POST",
-        url: "/dashboard/SPW/SPW/SPW3/hyperspace/php/login.php",
-        data: {"uname" : uname, "pword" : pword}
-    })
-    .done (function(data, textStatus, jqXHR) { 
-      alert("Success: " + data); 
-      if (data === "Found Match"){
-          window.location.href = "http://localhost/SPW-Project/profile.html"
+  $.ajax({
+      type: "POST",
+      url: "/dashboard/SPW/SPW/SPW3/hyperspace/php/login.php",
+      data: {
+        "uname": uname,
+        "pword": pword
       }
     })
-    .fail (function(jqXHR, textStatus, errorThrown) { 
-      alert("Error" + errorThrown + textStatus); 
+    .done(function (data, textStatus, jqXHR) {
+      alert("Success: " + data);
+      if (data === "Found Match") {
+        window.location.href = "http://localhost/SPW-Project/profile.html"
+      }
     })
-    .always (function(jqXHROrData, textStatus, jqXHROrErrorThrown) { 
+    .fail(function (jqXHR, textStatus, errorThrown) {
+      alert("Error" + errorThrown + textStatus);
+    })
+    .always(function (jqXHROrData, textStatus, jqXHROrErrorThrown) {
       //alert("complete"); 
     });
-    
 }
 
-document.getElementById("loginbutton").addEventListener("click", login); 
+document.getElementById("loginbutton").addEventListener("click", login);
